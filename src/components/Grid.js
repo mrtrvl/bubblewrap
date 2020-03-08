@@ -23,7 +23,7 @@ class Grid extends Component {
   }
 
   createGrid = () => {
-    const grid = []
+    const grid = [];
     for (let i = 0; i < this.rows; i++) {
       grid.push(<div key={this.index ++} className="row">{this.createColumns(this.columns)}</div>);
     }
