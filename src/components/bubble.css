@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.ui.container > h4 {
+    text-align: center;
+}
+
 .row {
     display: flex;
     line-height: 0;

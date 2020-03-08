@@ -4,13 +4,14 @@ import Bubble from './Bubble';
 import './bubble.css';
 
 class Grid extends Component {
-  columns = 10;
-  rows = 10;
+  columns = this.props.columns;
+  rows = this.props.rows;
   index = 0;
+
   createColumns = (columns) => {
     const column = [];
     for (let i = 0; i < columns; i++) {
-      column.push(<div key={this.index ++} className="cell"><Bubble /></div>);
+      column.push(<div key={this.index ++} className="cell"><Bubble onBubbleClick={this.props.onBubbleClick} /></div>);
     }
     return column;
   }
