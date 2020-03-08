@@ -4,6 +4,12 @@ import Bubble from './Bubble';
 import './bubble.css';
 
 class Grid extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      grid: this.createGrid()
+    }
+  }
   columns = this.props.columns;
   rows = this.props.rows;
   index = 0;
@@ -16,7 +22,7 @@ class Grid extends Component {
     return column;
   }
 
-  showBubbles = () => {
+  createGrid = () => {
     const grid = []
     for (let i = 0; i < this.rows; i++) {
       grid.push(<div key={this.index ++} className="row">{this.createColumns(this.columns)}</div>);
@@ -28,7 +34,7 @@ class Grid extends Component {
     return (
       <div className="ui two column centered grid">
         <div className="column">
-          {this.showBubbles()}
+          {this.state.grid}
         </div>
       </div>
     );

@@ -13,10 +13,10 @@ class Bubble extends Component {
     this.audio = new Audio(popAudio);
   }
 
-  pop = async () => {
+  pop = () => {
     if(!this.state.popped) {
       this.audio.play();
-      await this.setState({ popped: true });
+      this.setState({ popped: true });
       this.props.onBubbleClick();
     }
   }
