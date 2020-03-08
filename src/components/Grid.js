@@ -6,11 +6,11 @@ import './bubble.css';
 class Grid extends Component {
   columns = 10;
   rows = 10;
-
+  index = 0;
   createColumns = (columns) => {
     const column = [];
     for (let i = 0; i < columns; i++) {
-      column.push(<div className="Cell"><Bubble /></div>);
+      column.push(<div key={this.index ++} className="Cell"><Bubble /></div>);
     }
     return column;
   }
@@ -18,7 +18,7 @@ class Grid extends Component {
   showBubbles = () => {
     const grid = []
     for (let i = 0; i < this.rows; i++) {
-      grid.push(<div className="Row">{this.createColumns(this.columns)}</div>);
+      grid.push(<div key={this.index ++} className="Row">{this.createColumns(this.columns)}</div>);
     }
     return grid;
   }
