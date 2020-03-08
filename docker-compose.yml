@@ -1,0 +1,6 @@
+web:
+  restart: always
+  hostname: nginx
+  ports:
+    - 80:80
+  build: .
