@@ -1,22 +1,21 @@
-.Table
-{
-    display: table;
+.ui.container {
+    margin-top: 3em;
 }
-.Title
-{
-    display: table-caption;
-    text-align: center;
-    font-weight: bold;
-    font-size: larger;
-}
-.Heading
-{
-    display: table-row;
-    font-weight: bold;
+
+.ui.container > h1 {
     text-align: center;
 }
 
-.Cell
-{
+.row {
+    display: flex;
+    line-height: 0;
+}
+
+.cell {
     display: table-cell;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }

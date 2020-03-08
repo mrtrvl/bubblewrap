@@ -10,7 +10,7 @@ class Grid extends Component {
   createColumns = (columns) => {
     const column = [];
     for (let i = 0; i < columns; i++) {
-      column.push(<div key={this.index ++} className="Cell"><Bubble /></div>);
+      column.push(<div key={this.index ++} className="cell"><Bubble /></div>);
     }
     return column;
   }
@@ -18,14 +18,18 @@ class Grid extends Component {
   showBubbles = () => {
     const grid = []
     for (let i = 0; i < this.rows; i++) {
-      grid.push(<div key={this.index ++} className="Row">{this.createColumns(this.columns)}</div>);
+      grid.push(<div key={this.index ++} className="row">{this.createColumns(this.columns)}</div>);
     }
     return grid;
   }
 
   render() {
     return (
-      <div>{this.showBubbles()}</div>
+      <div className="ui two column centered grid">
+        <div className="column">
+          {this.showBubbles()}
+        </div>
+      </div>
     );
   }
 }
