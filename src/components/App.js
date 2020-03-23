@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Grid from './Grid';
+import Counter from './Counter';
 import Footer from './Footer';
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
 
   count = () => {
     const total = this.state.rows * this.state.columns;
-    return <span>{`Bubbles left: ${total - this.state.poppedCount}`}</span>
+    return total - this.state.poppedCount;
   }
 
   onBubbleClick = () => {
@@ -27,7 +28,7 @@ class App extends Component {
     return(
       <div className="ui container">
         <h1 className="ui header">Simple online bubble wrap game using React</h1>
-        <h4 className="ui header">{this.count()}</h4>
+        <Counter count={this.count()} />
         <div className="ui content">
           <Grid
             onBubbleClick={this.onBubbleClick}
